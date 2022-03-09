@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   .imageContainer {
     .imageA {
       height: 100%;
@@ -21,12 +21,6 @@
     a {
       img {
         width: 131px;
-        animation: arrowBlinks 1.5s infinite;
-      }
-      @keyframes arrowBlinks {
-        100% {
-          opacity: 0.25;
-        }
       }
     }
   }

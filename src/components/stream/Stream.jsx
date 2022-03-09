@@ -5,12 +5,15 @@ import KAJLO from "../../img/album/KAJLO.jpg";
 import SAMO from "../../img/album/SAMO.jpg";
 import ISTINOM from "../../img/album/ISTINOM.jpg";
 
+import HorizontalScroll from "react-scroll-horizontal";
+
 export default function Stream() {
+  const child = { width: `100vw`, height: `100vh` };
+
   return (
     <div className="stream" id="stream">
-      <h1>MACBETH</h1>
-      <div className="container">
-        <div className="item">
+      <HorizontalScroll reverseScroll>
+        <div style={child} className="item">
           <a
             href="https://songwhip.com/macbeth/crne-oci"
             target="_blank"
@@ -19,34 +22,34 @@ export default function Stream() {
             <img src={CRNE} alt="Crne oči / 1996" />
           </a>
         </div>
-        <div className="item">
+        <div style={child} className="item">
           <a
-            href="https://songwhip.com/macbeth/kajlostara"
+            href="https://songwhip.com/macbeth/crne-oci"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={KAJLO} alt="Kajlo stara / 1999" />
+            <img src={KAJLO} alt="Crne oči / 1996" />
           </a>
         </div>
-        <div className="item">
+        <div style={child} className="item">
           <a
-            href="https://songwhip.com/macbeth/samo-jedan-je"
+            href="https://songwhip.com/macbeth/crne-oci"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={SAMO} alt="Samo Jedan Je / 2000" />
+            <img src={SAMO} alt="Crne oči / 1996" />
           </a>
         </div>
-        <div className="item">
+        <div style={child} className="item">
           <a
-            href="https://songwhip.com/macbeth/istinom"
+            href="https://songwhip.com/macbeth/crne-oci"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={ISTINOM} alt="Istinom / 2003" />
+            <img src={ISTINOM} alt="Crne oči / 1996" />
           </a>
         </div>
-      </div>
+      </HorizontalScroll>
     </div>
   );
 }
