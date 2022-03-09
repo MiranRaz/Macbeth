@@ -13,7 +13,7 @@ export default function Main() {
       </div>
       <div className="anchor">
         <a href="#stream">
-            <img src={DOLE} alt="Macbeth" />
+          <img src={DOLE} alt="DropDown" />
         </a>
       </div>
     </div>

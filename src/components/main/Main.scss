@@ -4,7 +4,9 @@
   margin: 0;
   padding: 0;
   display: flex;
-
+  align-items: center;
+  justify-content: center;
+  
   .imageContainer {
     .imageA {
       height: 100%;
@@ -13,21 +15,17 @@
   .anchor {
     position: absolute;
     align-items: center;
-    bottom: 50px;
+    bottom: 10%;
     justify-content: center;
-    left: 48%;
-    margin: 0;
-    padding: 0;
+
     a {
-      border: 5px orange;
-      border-radius: 50%;
       img {
-        width: 100px;
-        animation: arrowBlinks 1s infinite;
+        width: 131px;
+        animation: arrowBlinks 1.5s infinite;
       }
       @keyframes arrowBlinks {
         100% {
-          opacity: 0;
+          opacity: 0.25;
         }
       }
     }

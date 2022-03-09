@@ -1,0 +1,44 @@
+.sidebar {
+  width: 400px;
+  height: 100vh;
+  background-color: rgb(18, 18, 26);
+  color: whitesmoke;
+  position: fixed;
+  top: 0;
+  right: -400px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+
+  &.active {
+    background: rgb(17, 24, 41);
+    right: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 40px;
+    font-weight: 400;
+    width: 50%;
+    color: whitesmoke;
+
+    li {
+      margin-bottom: 22px;
+
+      a {
+        color: inherit;
+        font-size: inherit;
+        text-decoration: none;
+      }
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
