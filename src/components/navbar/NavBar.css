@@ -1,0 +1,10 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+.navbar .left {
+  background-color: white;
+}
+.navbar .right {
+  background-color: black;
+}
