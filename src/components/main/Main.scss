@@ -3,9 +3,33 @@
   width: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+
   .imageContainer {
-    img {
+    .imageA {
       height: 100%;
+    }
+  }
+  .anchor {
+    position: absolute;
+    align-items: center;
+    bottom: 50px;
+    justify-content: center;
+    left: 48%;
+    margin: 0;
+    padding: 0;
+    a {
+      border: 5px orange;
+      border-radius: 50%;
+      img {
+        width: 100px;
+        animation: arrowBlinks 1s infinite;
+      }
+      @keyframes arrowBlinks {
+        100% {
+          opacity: 0;
+        }
+      }
     }
   }
 }
