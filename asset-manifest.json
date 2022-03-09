@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Macbeth/static/css/main.ad56703c.css",
+    "main.js": "/Macbeth/static/js/main.6575214a.js",
+    "static/media/MCBTHTPT.png": "/Macbeth/static/media/MCBTHTPT.e58637cb39a1cac88d03.png",
+    "static/media/MCBTH.png": "/Macbeth/static/media/MCBTH.26352d8be66f9a21d2de.png",
+    "index.html": "/Macbeth/index.html",
+    "main.ad56703c.css.map": "/Macbeth/static/css/main.ad56703c.css.map",
+    "main.6575214a.js.map": "/Macbeth/static/js/main.6575214a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad56703c.css",
+    "static/js/main.6575214a.js"
+  ]
+}
