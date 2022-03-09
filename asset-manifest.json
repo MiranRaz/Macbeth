@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/Macbeth/static/css/main.7a45902e.css",
-    "main.js": "/Macbeth/static/js/main.fc6e87dc.js",
+    "main.css": "/Macbeth/static/css/main.d80ff382.css",
+    "main.js": "/Macbeth/static/js/main.f91ebc58.js",
     "static/media/MCBTHTPT.png": "/Macbeth/static/media/MCBTHTPT.e58637cb39a1cac88d03.png",
+    "static/media/KAJLO.jpg": "/Macbeth/static/media/KAJLO.d4c81665fe2e828eba66.jpg",
+    "static/media/SAMO.jpg": "/Macbeth/static/media/SAMO.89d75f09ee78b30dd4bb.jpg",
     "static/media/MCBTH.png": "/Macbeth/static/media/MCBTH.26352d8be66f9a21d2de.png",
-    "static/media/DOLE.png": "/Macbeth/static/media/DOLE.bdacdcc5dc070e4a4275.png",
+    "static/media/ISTINOM.jpg": "/Macbeth/static/media/ISTINOM.cde1cdd3b76db232f07e.jpg",
     "index.html": "/Macbeth/index.html",
-    "main.7a45902e.css.map": "/Macbeth/static/css/main.7a45902e.css.map",
-    "main.fc6e87dc.js.map": "/Macbeth/static/js/main.fc6e87dc.js.map"
+    "main.d80ff382.css.map": "/Macbeth/static/css/main.d80ff382.css.map",
+    "main.f91ebc58.js.map": "/Macbeth/static/js/main.f91ebc58.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a45902e.css",
-    "static/js/main.fc6e87dc.js"
+    "static/css/main.d80ff382.css",
+    "static/js/main.f91ebc58.js"
   ]
 }
