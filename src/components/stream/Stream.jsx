@@ -7,6 +7,8 @@ import ISTINOM from "../../img/album/ISTINOM.jpg";
 
 import HorizontalScroll from "react-scroll-horizontal";
 
+import GORE from "../../img/GORE.png";
+
 export default function Stream() {
   const child = { width: `100vw`, height: `100vh` };
 
@@ -48,6 +50,13 @@ export default function Stream() {
           >
             <img src={ISTINOM} alt="Crne oči / 1996" />
           </a>
+        </div>
+        <div style={child} className="item">
+          <div className="anchor">
+            <a href="#main">
+              <img src={GORE} alt="UP" />
+            </a>
+          </div>
         </div>
       </HorizontalScroll>
     </div>

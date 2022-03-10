@@ -1,13 +1,17 @@
 .stream {
-  width: 100vw;
-  height: 100vh;
+  width: 60vw;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  scroll-snap-type: x mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-snap-align: start;
+  overflow: auto;
 
   .item {
-    width: 500px;
-    height: 500px;
     border-radius: 5px;
     margin: 10px 20px;
     display: flex;
@@ -28,9 +32,9 @@
     }
 
     img {
-      width: 500px;
-      height: 500px;
-      object-fit: cover;
+      width: 700px;
+      height: 700px;
+      object-fit: fill;
       z-index: 1;
       cursor: pointer;
       margin: 0;
@@ -43,5 +47,18 @@
     //       z-index: 0;
     //     }
     //   }
+    .anchor {
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+
+      a {
+        img {
+          width: 131px;
+          height: 122px;
+        }
+      }
+    }
   }
 }

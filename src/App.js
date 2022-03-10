@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Main from "./components/main/Main";
 import NavBar from "./components/navbar/NavBar";
@@ -15,6 +15,7 @@ export default function App() {
       <SideBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="sections">
         <Main />
+        <History />
         <Stream />
         <History />
       </div>
