@@ -9,10 +9,7 @@ export default function SideBar({ menuOpen, setMenuOpen }) {
           <a href="#main">početna</a>
         </li>
         <li onClick={() => setMenuOpen(false)}>
-          <a href="#stream"> Macbeth</a>
-        </li>
-        <li onClick={() => setMenuOpen(false)}>
-          <a href="#history">historija</a>
+          <a href="#stream">albumi</a>
         </li>
       </ul>
     </div>
