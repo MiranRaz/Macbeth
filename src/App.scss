@@ -1,26 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
-.loadCont {
+
+.loadingData {
   text-align: center;
   display: flex;
-  background-color: rgb(17, 24, 41);
+  background-color: whitesmoke;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 
-  h1 {
+  .icona {
     color: whitesmoke;
-    font-family: "Dancing Script", cursive;
-    font-size: 77px;
     animation: macb 2s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+
     @keyframes macb {
       100% {
-        opacity: 0.2;
+        transform: rotateZ(730deg);
       }
-    }
-
-    @media only screen and (max-width: 2400px) {
-      font-size: 30px;
     }
   }
 }
