@@ -6,10 +6,7 @@ export default function SideBar({ menuOpen, setMenuOpen }) {
     <div className={"sidebar " + (menuOpen && "active")}>
       <ul>
         <li onClick={() => setMenuOpen(false)}>
-          <a href="#main">početna</a>
-        </li>
-        <li onClick={() => setMenuOpen(false)}>
-          <a href="#stream">albumi</a>
+          <a href="#galerija">Galerija</a>
         </li>
       </ul>
     </div>
