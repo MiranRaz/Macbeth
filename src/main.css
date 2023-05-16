@@ -1,0 +1,16 @@
+* {
+  /*transition: all 0.5s ease-in-out;*/
+  user-select: none;
+}
+body {
+  margin: 0;
+  font-family: "Roundkey", monospace;
+  font-weight: 700;
+}
+.transition {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+.show {
+  opacity: 1;
+}
