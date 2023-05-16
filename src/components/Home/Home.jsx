@@ -40,7 +40,7 @@ const Home = () => {
           justifyContent: "center",
           position: "relative",
           zIndex: 1, // Ensure the lower image appears on top
-          marginTop: "-7%", // Adjust the value to control the amount of vertical overlap
+          marginTop: "-6.6%", // Adjust the value to control the amount of vertical overlap
           marginRight: "-37%", // Adjust the value to control the amount of horizontal overlap
         }}
       >

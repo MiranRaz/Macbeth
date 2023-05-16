@@ -22,12 +22,13 @@ export const CustomButton = styled(Link)(({ isactive, theme }) => ({
     bottom: 0,
     width: "100%",
     height: "1px",
-    backgroundColor:
-      isactive === "true" ? `${theme.palette.primary.text}` : "transparent",
-    transition: "background-color 0.4s ease-in-out",
+    backgroundColor: `${theme.palette.primary.text}`,
+    transition: "transform 0.4s ease-in-out, width 0.4s ease-in-out",
+    transformOrigin: "left",
+    transform: isactive === "true" ? "scaleX(1)" : "scaleX(0)",
     marginTop: "2px",
   },
   "&:hover::after": {
-    backgroundColor: `${theme.palette.primary.text}`,
+    transform: "scaleX(1)",
   },
 }));

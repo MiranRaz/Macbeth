@@ -68,8 +68,10 @@ const NavBar = () => {
               style={{
                 height: "65px",
                 width: "85px",
+                cursor: "pointer",
               }}
               draggable="false"
+              onClick={() => (window.location.href = "/")}
             />
           </Grid>
           <Grid
