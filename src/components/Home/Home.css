@@ -1,0 +1,164 @@
+.transition-image {
+  position: relative;
+  overflow: hidden;
+  opacity: 0; /* Set initial opacity to 0 */
+}
+
+.transition-image.show {
+  opacity: 1;
+  animation: revealImage 0.5s ease-in-out forwards; /* Adjust the duration and easing function as desired */
+}
+
+@keyframes revealImage {
+  0% {
+    clip-path: polygon(0% 12%, 22% 100%, 0% 100%, 0% 0%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+}
+
+/*scroll animation */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: flex-start;
+}
+.card {
+  transform: translate(100px);
+  opacity: 0;
+  transition: 0.3s;
+  width: 70vw;
+}
+.card.showing {
+  transform: translateX(0);
+  opacity: 1;
+}
+.logo {
+  opacity: 0;
+  transition: 0.3s;
+}
+.logo.showing {
+  opacity: 1;
+}
+
+/*ALBUM CARD INITIAL ANIMATION & FLIP CARD ON HOVER */
+.album-card-animation {
+  padding: 12px;
+  transform: translate(-400px);
+  transition: all 0.5s ease-in-out;
+}
+
+.card.showing .album-card-animation {
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.album-card-animation.reset-transform {
+  transform: translate(-400px);
+}
+
+/*flip album card */
+
+.flip-card-container {
+  width: 333px;
+  height: 333px;
+  perspective: 1000px;
+}
+
+.flip-card {
+  position: relative;
+  width: 333px;
+  height: 333px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  padding-top: 10px;
+}
+
+.flip-card-container:hover .flip-card {
+  transform: rotateY(0deg); /* <=>  rotateY(.5turn) */
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 333px;
+  height: 333px;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden; /* Hide any overflowing content */
+  box-sizing: border-box; /* Include border in the dimensions */
+  transform-style: preserve-3d; /* Add transform-style property */
+  transition: transform 0.7s; /* Add transition for smooth flipping */
+}
+
+.flip-card-container:hover .flip-card-front {
+  transform: rotateY(180deg); /* Flip the front side */
+}
+
+.flip-card-container:hover .flip-card-back {
+  transform: rotateY(0deg); /* Flip the back side */
+}
+
+.flip-card-front {
+  background-color: transparent; /* Set initial background as transparent */
+  color: transparent; /* Set initial text color as transparent */
+  padding: 10px; /* Add padding for text */
+  text-align: center; /* Center the text */
+  font-size: 1.4rem; /* Add desired font size */
+  line-height: 1.5rem; /* Add desired line height */
+  transform: rotateY(0deg); /* Ensure the front side is visible initially */
+  transform-origin: center; /* Set the transform origin to the center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  padding: 10px; /* Add padding for text */
+  transform: rotateY(180deg); /* Ensure the back side is flipped initially */
+}
+
+/* Fix the size of the front image */
+.flip-card-front img {
+  width: 333px;
+  height: 333px;
+  object-fit: cover;
+}
+
+/**/
+.card.reverse {
+  flex-direction: row-reverse;
+}
+
+.card.reverse .album-card-animation {
+  padding: 12px;
+}
+
+.yt-iframe {
+  width: 70%;
+  height: 504px;
+}
+
+/* CSS for phone and tablet screens */
+@media only screen and (max-width: 900px) {
+  .card {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .card.showing {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .yt-iframe {
+    width: 100%;
+    height: 300px;
+  }
+}

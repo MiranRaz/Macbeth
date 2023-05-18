@@ -27,7 +27,7 @@ const Gallery = () => {
   return (
     <div
       style={{
-        height: `calc(100vh - 65px)`,
+        height: "100vh",
         width: "100vw",
         backgroundColor: theme.palette.primary.main,
         overflow: "scroll",

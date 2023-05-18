@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Home from "./Home/Home.jsx";
 import About from "./About/About.jsx";
 import NavBar from "./NavBar/NavBar.jsx";
 import ErrorPage from "./ErrorPage.jsx";
 import Gallery from "./Gallery/Gallery.jsx";
+
 const App = () => {
   return (
     <Router>

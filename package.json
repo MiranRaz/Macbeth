@@ -21,6 +21,7 @@
     "i18next": "^22.4.15",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
+    "react-blurhash": "^0.3.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.5",
     "react-i18next": "^12.2.2",
