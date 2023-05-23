@@ -1,7 +1,7 @@
 const darkPalette = {
   type: "dark",
   primary: {
-    main: "#FFFFFF",
+    main: "#E8E8E8",
     text: "#12121A",
   },
   // Add more color overrides if needed

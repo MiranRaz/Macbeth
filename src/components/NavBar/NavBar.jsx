@@ -26,7 +26,7 @@ import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 
-const pages = ["Home", "About", "Discography", "Gallery", "Stream"];
+const pages = ["Home", "About", "Gallery", "Stream", "Video"];
 
 const NavBar = () => {
   let themeMode = useSelector((state) => state.theme.themeMode);
@@ -50,6 +50,8 @@ const NavBar = () => {
       style={{
         backgroundColor: theme.palette.primary.main,
         transition: "all 0.3s ease-in-out",
+        borderBottom: `1px solid ${theme.palette.primary.text}`,
+        boxShadow: "none",
       }}
     >
       <Container maxWidth="xl">

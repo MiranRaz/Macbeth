@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import macbeth_yt from "../../assets/macbeth_yt.jpg";
 import macbeth_text from "../../assets/macbeth_text.png";
 import macbeth_text_light from "../../assets/macbeth_text_light.png";
@@ -9,15 +9,14 @@ import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 import "./Home.css";
 import MacbethHomeContent from "./MacbethHomeContent.jsx";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward.js";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // Import CSS file for animations
+import GoTo from "../GoTo.jsx";
+import macbeth_logo from "../../assets/macbeth_logo.png";
+import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
 
 const Home = () => {
   const [showImage, setShowImage] = useState(false); // Set initial state to false
   const themeMode = useSelector((state) => state.theme.themeMode);
   const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
-  const { t } = useTranslation();
 
   useEffect(() => {
     const initialLoad = localStorage.getItem("initialLoad"); // Check if it's the initial page load
@@ -95,79 +94,25 @@ const Home = () => {
           style={{ width: "23%" }}
         />
       </Grid>
+      <img
+        src={themeMode ? macbeth_logo : macbeth_logo_dark}
+        alt="macbeth logo"
+        style={{
+          position: "fixed",
+          height: "60%",
+          width: "60%",
+          opacity: "0.1",
+          bottom: -69,
+          zIndex: 0,
+        }}
+        draggable="false"
+      />
       {/* Intersection observer implementation */}
       <MacbethHomeContent />
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around",
-          paddingBottom: "100px",
-        }}
-      >
-        <Grid
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-          }}
-        >
-          <div
-            style={{
-              display: "inline-block",
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }}
-          >
-            <Button
-              variant="text"
-              endIcon={
-                <ArrowForwardIcon
-                  sx={{
-                    transform: "rotate(-90deg)",
-                  }}
-                />
-              }
-              style={{
-                fontFamily: "inherit",
-                color: "inherit",
-                fontWeight: "inherit",
-              }}
-            >
-              {t("home")}
-            </Button>
-          </div>
-        </Grid>
-        <Grid
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center", // Add this line to center the arrow
-          }}
-        >
-          <Link
-            to={"/about"}
-            style={{ color: "inherit", textDecoration: "none" }}
-          >
-            <Button
-              variant="text"
-              endIcon={<ArrowForwardIcon />}
-              style={{
-                fontFamily: "inherit",
-                color: "inherit",
-                fontWeight: "inherit",
-              }}
-            >
-              {t("about")}
-            </Button>
-          </Link>
-        </Grid>
-      </Grid>
+
+      <div style={{ paddingBottom: "13px" }}>
+        <GoTo from="home" to="about" deg="-90deg" />
+      </div>
     </div>
   );
 };

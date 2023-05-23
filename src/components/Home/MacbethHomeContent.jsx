@@ -183,7 +183,7 @@ const MacbethHomeContent = () => {
                           }}
                         >
                           <Link
-                            to={`/stream/${card.albumID}/${card.songID}`}
+                            to={`/stream`}
                             style={{ color: "inherit", textDecoration: "none" }}
                           >
                             <Button

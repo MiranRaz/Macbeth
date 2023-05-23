@@ -6,8 +6,10 @@ import DarkTheme from "../../theme/DarkTheme.js";
 import { decode } from "blurhash";
 
 import galerija_slike from "../../assets/galerija_slike.png";
+import { Grid } from "@mui/material";
+import GoTo from "../GoTo.jsx";
 
-const Gallery = () => {
+const GalleryPage = () => {
   const themeMode = useSelector((state) => state.theme.themeMode);
   const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
   const blurhash = "LKO2?V%2Tw=w]~RBVZRi};RPxuwH";
@@ -52,8 +54,19 @@ const Gallery = () => {
           />
         </>
       )}
+      <Grid
+        style={{
+          position: "absolute",
+          bottom: 0,
+          width: "100%",
+          paddingBottom: "13px",
+          color: "white",
+        }}
+      >
+        <GoTo from="about" to="stream" deg="-180deg" />
+      </Grid>
     </div>
   );
 };
 
-export default Gallery;
+export default GalleryPage;
