@@ -53,6 +53,7 @@ const MacbethHomeContent = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        zIndex: 2,
       }}
     >
       <div

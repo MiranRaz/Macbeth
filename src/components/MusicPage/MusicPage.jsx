@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
@@ -6,7 +5,6 @@ import DarkTheme from "../../theme/DarkTheme.js";
 import GoTo from "../GoTo.jsx";
 import { Grid } from "@mui/material";
 import { useState } from "react"; // Import useState hook for handling state
-
 import albumData from "./AlbumData.js";
 import AlbumModal from "./AlbumModal.jsx";
 import macbeth_logo from "../../assets/macbeth_logo.png";
@@ -63,6 +61,7 @@ const MusicPage = () => {
               transform:
                 hoveredImageIndex === index ? "translateY(-10px)" : "none", // Apply movement based on hover state
               transition: "opacity 0.3s, transform 0.3s", // Add transition effect
+              zIndex: 2,
             }}
             onMouseEnter={() => setHoveredImageIndex(index)} // Set the hovered image index on mouse enter
             onMouseLeave={() => setHoveredImageIndex(-1)} // Reset the hovered image index on mouse leave

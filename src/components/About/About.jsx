@@ -71,10 +71,9 @@ const About = () => {
           sm={6}
           sx={{
             fontSize: {
-              xs: "56px",
-              sm: "33px",
-              md: "30px",
-              lg: "99px",
+              xs: "66px",
+              sm: "133px",
+              lg: "144px",
             },
             width: {
               xs: "40%",
@@ -123,6 +122,7 @@ const About = () => {
               overflowY: "scroll",
               borderBottom: `1px solid ${theme.palette.primary.text}`,
               borderTop: `1px solid ${theme.palette.primary.text}`,
+              zIndex: 2,
             }}
           >
             {t("about_desc")}
@@ -148,6 +148,7 @@ const About = () => {
               style={{
                 width: "111px",
                 transform: `rotate(${theRotationAngle}deg)`,
+                zIndex: 2,
               }}
               draggable={false}
             />

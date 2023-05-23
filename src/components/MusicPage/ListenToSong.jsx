@@ -6,10 +6,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { createTheme } from "@mui/material/styles";
-import LightTheme from "../../theme/LightTheme.js";
-import DarkTheme from "../../theme/DarkTheme.js";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -18,10 +14,6 @@ import { faDeezer } from "@fortawesome/free-brands-svg-icons";
 import { faAmazon } from "@fortawesome/free-brands-svg-icons";
 
 const ListenToSong = ({ pickedAlbum }) => {
-  // theme
-  let themeMode = useSelector((state) => state.theme.themeMode);
-  const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
-
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -39,7 +31,7 @@ const ListenToSong = ({ pickedAlbum }) => {
             onChange={handleChange(item)}
             sx={{
               backgroundColor: "inherit",
-              borderBottom: `3px dotted ${theme.palette.primary.text}`,
+              borderBottom: `3px dotted white`,
               boxShadow: "0",
             }}
           >
@@ -56,14 +48,18 @@ const ListenToSong = ({ pickedAlbum }) => {
                     sx={{
                       width: "33%",
                       flexShrink: 0,
-                      color: theme.palette.primary.text,
+                      color: "white",
                     }}
                   >
                     {index + 1}
                   </Typography>
                 </Grid>
                 <Grid>
-                  <Typography sx={{ color: theme.palette.primary.text }}>
+                  <Typography
+                    sx={{
+                      color: "white",
+                    }}
+                  >
                     {expanded === item ? (
                       <Grid sx={{ display: "flex", flexDirection: "row" }}>
                         <YouTubeIcon
@@ -100,7 +96,7 @@ const ListenToSong = ({ pickedAlbum }) => {
                     )}
                   </Typography>
                 </Grid>
-                <Grid sx={{ color: theme.palette.primary.text }}>{item}</Grid>
+                <Grid sx={{ color: "white" }}>{item}</Grid>
               </Grid>
             </AccordionSummary>
             <AccordionDetails>
@@ -121,7 +117,7 @@ const ListenToSong = ({ pickedAlbum }) => {
                     <Typography
                       key={lineIndex}
                       sx={{
-                        color: theme.palette.primary.text,
+                        color: "white",
                       }}
                     >
                       {line}

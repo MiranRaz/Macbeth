@@ -46,6 +46,7 @@ const Home = () => {
         color: theme.palette.primary.text,
         transition: "all 0.3s ease-in-out",
         overflowY: "scroll",
+        zIndex: 2,
         overflowX: "hidden", // Add overflow: hidden to hide overflowing content
       }}
     >
@@ -70,6 +71,7 @@ const Home = () => {
             marginBottom: "-10%",
             transition: "opacity 0.3s ease-in-out", // Add transition property
             opacity: showImage ? 1 : 0, // Apply opacity based on showImage state
+            zIndex: 1,
           }}
         />
       </Grid>
@@ -91,7 +93,7 @@ const Home = () => {
           alt="{alt}"
           draggable={false}
           loading="lazy"
-          style={{ width: "23%" }}
+          style={{ width: "23%", zIndex: 2 }}
         />
       </Grid>
       <img

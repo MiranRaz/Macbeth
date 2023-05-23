@@ -4,47 +4,62 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { DialogActions } from "@mui/material";
-import HeadphonesIcon from "@mui/icons-material/Headphones.js";
+import HeadphonesIcon from "@mui/icons-material/Headphones";
 import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
-import LightTheme from "../../theme/LightTheme.js";
-import DarkTheme from "../../theme/DarkTheme.js";
-import AlbumData from "./AlbumData.js";
-import ListenToSong from "./ListenToSong.jsx";
+import LightTheme from "../../theme/LightTheme";
+import DarkTheme from "../../theme/DarkTheme";
+import AlbumData from "./AlbumData";
+import ListenToSong from "./ListenToSong";
 import { Link } from "react-router-dom";
 
 const AlbumModal = ({ open, setOpen, albumName }) => {
-  // theme
-  let themeMode = useSelector((state) => state.theme.themeMode);
-  const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
-
   const handleClose = () => {
     setOpen(false);
   };
   const pickedAlbum = Object.values(AlbumData).filter(
     (album) => album.albumName === albumName
   );
+
   return (
     <Dialog
       open={open}
       onClose={handleClose}
       PaperProps={{
         sx: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           minWidth: { xs: "90%", md: "60%", lg: "60%" },
           maxWidth: { xs: "90%", md: "60%", lg: "60%" },
           height: "100%",
           fontFamily: "inherit",
-          backgroundColor: theme.palette.primary.main,
-          color: theme.palette.primary.text,
-          border: `1px solid ${theme.palette.primary.text}`,
+          position: "relative",
+          color: "white",
+          border: `1px solid white`,
         },
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${pickedAlbum[0]?.img})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          filter: "blur(13px)", // Adjust the blur value as needed
+          color: "white",
+        }}
+      />
       <DialogTitle>{albumName}</DialogTitle>
       <DialogContent>
         <DialogContentText
           sx={{
-            color: theme.palette.primary.text,
+            color: "white",
           }}
         >
           <ListenToSong pickedAlbum={pickedAlbum} />
@@ -65,11 +80,12 @@ const AlbumModal = ({ open, setOpen, albumName }) => {
             }}
             onClick={() => {}}
           >
-            Stream `{albumName}`
+            Stream '{albumName}'
           </Button>
         </Link>
       </DialogActions>
     </Dialog>
   );
 };
+
 export default AlbumModal;
