@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
@@ -7,12 +6,12 @@ import { Grid } from "@mui/material";
 import GoTo from "../GoTo.jsx";
 import macbeth_logo from "../../assets/macbeth_logo.png";
 import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
+import { array } from "./VideosData.js";
+
 const VideoPage = () => {
   // theme
   let themeMode = useSelector((state) => state.theme.themeMode);
   const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
-  //translation
-  const { t } = useTranslation();
 
   return (
     <div
@@ -20,8 +19,45 @@ const VideoPage = () => {
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.text,
         height: "100vh",
+        width: "100vw",
+        overflow: "scroll",
+        zIndex: 2,
       }}
     >
+      <Grid
+        container
+        item
+        xs={12}
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column", // Add this line
+          paddingTop: "20vh", // Adjust the value to center the component vertically
+          paddingBottom: "20vh", // Adjust the value to center the component vertically
+          zIndex: 2,
+        }}
+      >
+        {array.map((item) => (
+          <iframe
+            style={{
+              border: 0,
+              borderRadius: "10px",
+              boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
+              marginBottom: "20px", // Add padding at the bottom of each iframe
+              zIndex: 2,
+            }}
+            width="460"
+            height="315"
+            src={`https://www.youtube.com/embed/${item}`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy"
+            allowFullScreen
+          />
+        ))}
+      </Grid>
       <img
         src={themeMode ? macbeth_logo : macbeth_logo_dark}
         alt="macbeth logo"
