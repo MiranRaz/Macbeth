@@ -33,9 +33,9 @@ const VideoPage = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          flexDirection: "column", // Add this line
-          paddingTop: "20vh", // Adjust the value to center the component vertically
-          paddingBottom: "20vh", // Adjust the value to center the component vertically
+          flexDirection: "row",
+          paddingTop: "10vh",
+          paddingBottom: "20vh",
           zIndex: 2,
         }}
       >
@@ -47,6 +47,7 @@ const VideoPage = () => {
               boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
               marginBottom: "20px", // Add padding at the bottom of each iframe
               zIndex: 2,
+              margin: "10px",
             }}
             width="460"
             height="315"
@@ -77,6 +78,7 @@ const VideoPage = () => {
           bottom: 0,
           width: "100%",
           paddingBottom: "13px",
+          zIndex: 4,
         }}
       >
         <GoTo from="stream" to="home" deg="-180deg" />
