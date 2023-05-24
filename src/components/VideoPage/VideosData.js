@@ -11,8 +11,7 @@ const jedanDanYT = "XKrowfGZ6LY";
 const kadJeOtislaYT = "7eN8epSaOgc";
 const kajloStaraYT = "hYkEmEid3co";
 const mahalaYT = "w6-kr2qQRiM";
-const mahala2YT = "XUw7ZFaksKc";
-const array = [
+const allVideosYT = [
   nekaMiOprosteYT,
   nemaPunoPrijateljaYT,
   opsesijaYT,
@@ -25,6 +24,5 @@ const array = [
   kadJeOtislaYT,
   kajloStaraYT,
   mahalaYT,
-  mahala2YT,
 ];
-export { array };
+export { allVideosYT };

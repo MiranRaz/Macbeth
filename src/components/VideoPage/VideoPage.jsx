@@ -6,7 +6,7 @@ import { Grid } from "@mui/material";
 import GoTo from "../GoTo.jsx";
 import macbeth_logo from "../../assets/macbeth_logo.png";
 import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
-import { array } from "./VideosData.js";
+import { allVideosYT } from "./VideosData.js";
 
 const VideoPage = () => {
   // theme
@@ -39,8 +39,9 @@ const VideoPage = () => {
           zIndex: 2,
         }}
       >
-        {array.map((item) => (
+        {allVideosYT.map((item) => (
           <iframe
+            key={item}
             style={{
               border: 0,
               borderRadius: "10px",
