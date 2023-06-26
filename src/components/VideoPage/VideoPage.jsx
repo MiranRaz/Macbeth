@@ -49,6 +49,7 @@ const VideoPage = () => {
               marginBottom: "20px", // Add padding at the bottom of each iframe
               zIndex: 2,
               margin: "10px",
+              backgroundColor: "black",
             }}
             width="460"
             height="315"

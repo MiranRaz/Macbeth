@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
-import macbeth_yt from "../../assets/macbeth_yt.jpg";
+import macbeth_home from "../../assets/macbeth_home.jpg";
 import macbeth_text from "../../assets/macbeth_text.png";
 import macbeth_text_light from "../../assets/macbeth_text_light.png";
 import { useSelector } from "react-redux";
@@ -10,8 +10,6 @@ import DarkTheme from "../../theme/DarkTheme.js";
 import "./Home.css";
 import MacbethHomeContent from "./MacbethHomeContent.jsx";
 import GoTo from "../GoTo.jsx";
-import macbeth_logo from "../../assets/macbeth_logo.png";
-import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
 
 const Home = () => {
   const [showImage, setShowImage] = useState(false); // Set initial state to false
@@ -55,16 +53,16 @@ const Home = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
+          alignItems: "flex-end",
           overflow: "hidden",
           height: "300px", // Set the desired height for the cropped image
           mt: 19,
         }}
       >
         <img
-          src={macbeth_yt}
+          src={macbeth_home}
           alt="{alt}"
           draggable={false}
-          loading="lazy"
           style={{
             width: "80%",
             marginTop: "-20%",
@@ -96,19 +94,6 @@ const Home = () => {
           style={{ width: "23%", zIndex: 2 }}
         />
       </Grid>
-      <img
-        src={themeMode ? macbeth_logo : macbeth_logo_dark}
-        alt="macbeth logo"
-        style={{
-          position: "fixed",
-          height: "60%",
-          width: "60%",
-          opacity: "0.1",
-          bottom: -69,
-          zIndex: 0,
-        }}
-        draggable="false"
-      />
       {/* Intersection observer implementation */}
       <MacbethHomeContent />
 

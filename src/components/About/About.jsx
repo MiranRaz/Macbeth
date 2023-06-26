@@ -8,8 +8,7 @@ import plocha from "../../assets/plocha.png";
 import "./About.css";
 import GoTo from "../GoTo.jsx";
 import { useEffect, useState } from "react";
-import macbeth_logo from "../../assets/macbeth_logo.png";
-import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
+import macbeth_skend from "../../assets/macbeth_skend.jpg";
 
 const About = () => {
   // theme
@@ -19,21 +18,10 @@ const About = () => {
   const { t } = useTranslation();
   //
   const [theRotationAngle, setTheRotationAngle] = useState(0);
-  const [theScrollPosition, setTheScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = document.getElementById("theText").scrollTop;
-      // const rotationAngle = scrollPosition / 5; // Adjust the division factor to control the rotation speed
-      // console.log(scrollPosition);
-      // if (scrollPosition === 1319.5) {
-      //   alert("sta ima");
-      // }
-      // const imageElement = document.getElementById("thePlocha");
-      // if (imageElement) {
-      //   imageElement.style.transform = `rotate(${rotationAngle}deg)`;
-      // }
-      setTheScrollPosition(document.getElementById("theText").scrollTop);
       setTheRotationAngle(scrollPosition / 5);
     };
 
@@ -53,10 +41,11 @@ const About = () => {
     <div
       style={{
         width: "100%",
+        height: "100vh",
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.text,
         transition: "all 0.3s ease-in-out",
-        overflow: "hidden",
+        overflow: "scroll",
       }}
     >
       <Grid
@@ -101,9 +90,9 @@ const About = () => {
             },
             flexDirection: {
               xs: "column-reverse",
-              md: "row",
+              md: "column",
             },
-            pt: { xs: 3, md: 12 },
+            // pt: { xs: 3, md: 12 },
             pb: 15,
           }}
         >
@@ -117,7 +106,7 @@ const About = () => {
               fontSize: "36px",
               display: "flex",
               justifyContent: "flex-start",
-              height: "133px",
+              height: "111px",
               maxHeight: "33%",
               overflowY: "scroll",
               borderBottom: `1px solid ${theme.palette.primary.text}`,
@@ -129,11 +118,7 @@ const About = () => {
           </Grid>
           <Grid
             sx={{
-              position: {
-                xs: "absolute",
-                md: "fixed",
-                lg: "fixed",
-              },
+              position: "sticky",
               pt: {
                 xs: 1,
                 md: 9,
@@ -168,19 +153,7 @@ const About = () => {
           </Grid>
         </Grid>
       </div>
-      <img
-        src={themeMode ? macbeth_logo : macbeth_logo_dark}
-        alt="macbeth logo"
-        style={{
-          position: "fixed",
-          height: "60%",
-          width: "60%",
-          opacity: "0.1",
-          bottom: -69,
-          zIndex: 0,
-        }}
-        draggable="false"
-      />
+
       <Grid
         style={{
           position: "absolute",
@@ -190,6 +163,28 @@ const About = () => {
         }}
       >
         <GoTo from="home" to="gallery" deg="-180deg" />
+      </Grid>
+      <Grid sx={{ height: "100vh" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            overflow: "hidden",
+            height: "300px", // Set the desired height for the cropped image
+          }}
+        >
+          <img
+            src={macbeth_skend}
+            alt="{alt}"
+            draggable={false}
+            style={{
+              width: "80%",
+              marginTop: "-20%",
+              marginBottom: "-10%",
+              zIndex: 1,
+            }}
+          />
+        </div>
       </Grid>
     </div>
   );

@@ -56,7 +56,7 @@ const MusicPage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              p: "1px",
+              p: 1.5,
               opacity: hoveredImageIndex === index ? 1 : 0.9, // Apply opacity based on hover state
               transform:
                 hoveredImageIndex === index ? "translateY(-10px)" : "none", // Apply movement based on hover state
