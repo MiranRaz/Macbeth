@@ -4,8 +4,6 @@ import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 import { Grid } from "@mui/material";
 import GoTo from "../GoTo.jsx";
-import macbeth_logo from "../../assets/macbeth_logo.png";
-import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
 import { allVideosYT } from "./VideosData.js";
 
 const VideoPage = () => {
@@ -29,6 +27,7 @@ const VideoPage = () => {
         item
         xs={12}
         sx={{
+          backgroundColor: theme.palette.primary.main,
           width: "100%",
           display: "flex",
           justifyContent: "center",
@@ -61,26 +60,13 @@ const VideoPage = () => {
           />
         ))}
       </Grid>
-      <img
-        src={themeMode ? macbeth_logo : macbeth_logo_dark}
-        alt="macbeth logo"
-        style={{
-          position: "fixed",
-          height: "60%",
-          width: "60%",
-          opacity: "0.1",
-          bottom: -69,
-          zIndex: 0,
-        }}
-        draggable="false"
-      />
+
       <Grid
         style={{
           position: "absolute",
           bottom: 0,
           width: "100%",
           paddingBottom: "13px",
-          zIndex: 4,
         }}
       >
         <GoTo from="stream" to="home" deg="-180deg" />

@@ -3,11 +3,10 @@ import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 import { useTranslation } from "react-i18next";
-import { Grid } from "@mui/material";
-import plocha from "../../assets/plocha.png";
+import { Grid, Typography } from "@mui/material";
 import "./About.css";
 import GoTo from "../GoTo.jsx";
-import { useEffect, useState } from "react";
+import bandMembers from "./bandMembers.js";
 import macbeth_skend from "../../assets/macbeth_skend.jpg";
 
 const About = () => {
@@ -16,27 +15,6 @@ const About = () => {
   const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
   // translation
   const { t } = useTranslation();
-  //
-  const [theRotationAngle, setTheRotationAngle] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = document.getElementById("theText").scrollTop;
-      setTheRotationAngle(scrollPosition / 5);
-    };
-
-    const textElement = document.getElementById("theText");
-    if (textElement) {
-      textElement.addEventListener("scroll", handleScroll);
-    }
-
-    return () => {
-      if (textElement) {
-        textElement.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
-
   return (
     <div
       style={{
@@ -49,42 +27,31 @@ const About = () => {
       }}
     >
       <Grid
-        container
+        item
         sx={{
+          fontSize: {
+            xs: "66px",
+            sm: "133px",
+            lg: "144px",
+          },
           width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          sx={{
-            fontSize: {
-              xs: "66px",
-              sm: "133px",
-              lg: "144px",
-            },
-            width: {
-              xs: "40%",
-              sm: "40%",
-              md: "60%",
-            },
-          }}
-        >
-          MACBETH
-        </Grid>
+        MACBETH
       </Grid>
       <div
         style={{
-          height: "100vh",
           display: "flex",
+          alignItems: "flex-start",
         }}
       >
         <Grid
           container
           sx={{
             display: "flex",
-            alignItems: "flex-start",
+            alignItems: "center",
             justifyContent: {
               xs: "center",
             },
@@ -92,12 +59,10 @@ const About = () => {
               xs: "column-reverse",
               md: "column",
             },
-            // pt: { xs: 3, md: 12 },
             pb: 15,
           }}
         >
           <Grid
-            id="theText"
             item
             xs={12}
             md={6}
@@ -105,66 +70,15 @@ const About = () => {
               textAlign: "center",
               fontSize: "36px",
               display: "flex",
-              justifyContent: "flex-start",
-              height: "111px",
               maxHeight: "33%",
-              overflowY: "scroll",
-              borderBottom: `1px solid ${theme.palette.primary.text}`,
-              borderTop: `1px solid ${theme.palette.primary.text}`,
               zIndex: 2,
             }}
           >
             {t("about_desc")}
           </Grid>
-          <Grid
-            sx={{
-              position: "sticky",
-              pt: {
-                xs: 1,
-                md: 9,
-                lg: 9,
-              },
-            }}
-          >
-            <img
-              id="thePlocha"
-              src={plocha}
-              alt="Ploca"
-              style={{
-                width: "111px",
-                transform: `rotate(${theRotationAngle}deg)`,
-                zIndex: 2,
-              }}
-              draggable={false}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              maxHeight: "45%",
-              overflowY: "scroll",
-            }}
-          >
-            insert image carousel here
-          </Grid>
         </Grid>
       </div>
-
-      <Grid
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          paddingBottom: "13px",
-        }}
-      >
-        <GoTo from="home" to="gallery" deg="-180deg" />
-      </Grid>
-      <Grid sx={{ height: "100vh" }}>
+      <Grid sx={{ height: "50vh" }}>
         <div
           style={{
             display: "flex",
@@ -185,6 +99,69 @@ const About = () => {
             }}
           />
         </div>
+      </Grid>
+      {bandMembers.map((member) => (
+        <Grid
+          key={member?.id}
+          sx={{
+            height: "50vh",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Grid
+            container
+            item
+            sx={{
+              display: "flex",
+              justifyContent: member?.id % 2 === 0 ? "flex-start" : "flex-end",
+              width: "80%",
+            }}
+          >
+            <img
+              src={member?.image}
+              alt={member?.name}
+              draggable={false}
+              style={{
+                width: "400px",
+                height: "600px",
+                zIndex: 1,
+                opacity: 0.9,
+                objectFit: "fill",
+              }}
+            />
+            <Grid
+              sx={{
+                display: "flex",
+                height: "555px",
+                alignItems: "flex-end",
+                ml: "-70px",
+                zIndex: 2,
+              }}
+            >
+              <Typography
+                sx={{
+                  backgroundColor: "white",
+                  opacity: 0.8,
+                  width: "300px",
+                  borderRadius: "5px",
+                  height: "fit-content",
+                }}
+              >
+                {member.description}
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      ))}
+      <div style={{ height: "30vh" }}></div>
+      <Grid
+        style={{
+          bottom: 0,
+        }}
+      >
+        <GoTo from="home" to="gallery" deg="-180deg" />
       </Grid>
     </div>
   );
