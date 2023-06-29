@@ -1,10 +1,13 @@
-import hamzaImage from "../../assets/bandGallery/hamza.jpg";
+import hamzaImage from "../../assets/bandGallery/hamza.jpeg";
 import zenanImage from "../../assets/bandGallery/zenan.jpg";
+import nerminImage from "../../assets/bandGallery/nermin.jpg";
+import neznam from "../../assets/bandGallery/neznam.jpg";
 import laleImage from "../../assets/bandGallery/lale.jpg";
-import zuleImage from "../../assets/bandGallery/zule.jpg";
+import zuleImage from "../../assets/bandGallery/zule.png";
 import ogiImage from "../../assets/bandGallery/ogi.jpg";
 import huseinImage from "../../assets/bandGallery/husein.jpg";
 import nihadImage from "../../assets/bandGallery/nihad.jpg";
+import nailImage from "../../assets/bandGallery/nail.jpg";
 
 const bandMembers = [
   {
@@ -12,49 +15,75 @@ const bandMembers = [
     name: "hamza",
     image: hamzaImage,
     description:
-      "Hamza lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Hamza Ražnatović. Rođen 1972. godine. Frontmen i osnivač benda. Tekstopisac, gitarist, aranžer, producent, mix master inžinjer.",
   },
   {
     id: 1,
     name: "zenan",
     image: zenanImage,
     description:
-      "Zenan lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Zenan Šahinović. U bendu od njegovog osnivanja. Glavni gitarist, aranžer, producent, mix master inžinjer.",
   },
   {
     id: 2,
-    name: "lale",
-    image: laleImage,
-    description:
-      "Lale lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    name: "kenan",
+    image: neznam,
+    description: "Kenan Šahinović. U bendu od njegovog osnivanja.",
   },
   {
     id: 3,
-    name: "zule",
-    image: zuleImage,
-    description:
-      "Zule lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    name: "Nermin Demirović",
+    image: nerminImage,
+    description: "Nermin Demirović.",
   },
   {
     id: 4,
-    name: "ogi",
-    image: ogiImage,
-    description:
-      "Ogi lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    name: "Erol Rosan",
+    image: neznam,
+    description: "Erol Rosan.",
   },
   {
     id: 5,
-    name: "husein",
-    image: huseinImage,
-    description:
-      "Husein lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    name: "lale",
+    image: laleImage,
+    description: "Muamer Stočević Lale. Bas gitara i flauta.",
   },
   {
     id: 6,
+    name: "samir",
+    image: neznam,
+    description: "Samir Bajraktarević.",
+  },
+  {
+    id: 7,
+    name: "zule",
+    image: zuleImage,
+    description:
+      "Mladen Vitomir Žule je poslijeratni gitarist u bendu Macbeth. Preminuo 2008. godine od poslijedica predoziranja.",
+  },
+  {
+    id: 8,
     name: "nihad",
     image: nihadImage,
-    description:
-      "Nihad lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    description: "Nihad Malićbegović. ",
+  },
+  {
+    id: 9,
+    name: "ogi",
+    image: ogiImage,
+    description: "Oljeg Ražnatović Ogi.",
+  },
+  {
+    id: 10,
+    name: "husein",
+    image: huseinImage,
+    description: "Husein Mahmutović. ",
+  },
+  {
+    id: 11,
+    name: "nail",
+    image: nailImage,
+    description: "Nail Jusić.",
   },
 ];
 

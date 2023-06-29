@@ -1,7 +1,7 @@
 const lightPalette = {
   type: "light",
   primary: {
-    main: "#12121A",
+    main: "#333333",
     text: "#E8E8E8",
   },
   // Add more color overrides if needed

@@ -63,6 +63,7 @@ const MacbethHomeContent = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          zIndex: 2,
         }}
       >
         {albumsData.map((card, index) => (

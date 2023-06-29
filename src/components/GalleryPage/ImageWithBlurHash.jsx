@@ -18,7 +18,13 @@ const ImageWithBlurhash = ({ src, hash, placeholder }) => {
       {!imageLoading && placeholder}
       {imageLoading && (
         <>
-          <div style={{ width: "100%", height: "120px", display: "none" }}>
+          <div
+            style={{
+              width: "100%",
+              height: "120px",
+              display: "none",
+            }}
+          >
             <Blurhash
               hash={hash}
               width="400px"
@@ -38,6 +44,7 @@ const ImageWithBlurhash = ({ src, hash, placeholder }) => {
               transition: "opacity 0.5s ease-in-out",
               height: "180px",
               flex: "1 0 auto",
+              zIndex: 2,
             }}
             onLoad={() => {
               setImageLoading(true);
