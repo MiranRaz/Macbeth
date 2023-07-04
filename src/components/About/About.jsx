@@ -20,12 +20,11 @@ const About = () => {
     <div
       style={{
         width: "100%",
-        height: "100vh",
-        minHeight: "100vh",
+        height: "calc(100vh - 64px)",
         backgroundColor: theme.palette.primary.main,
         color: theme.palette.primary.text,
         transition: "all 0.3s ease-in-out",
-        overflow: "scroll",
+        overflowY: "scroll",
         overflowX: "hidden",
       }}
     >
@@ -106,104 +105,32 @@ const About = () => {
             width: "100%",
             display: "flex",
             justifyContent: "center",
+            alignItems: "center",
             paddingTop: 5,
           }}
         >
           <Grid
-            container
-            item
+            key={member?.id}
             sx={{
               display: "flex",
-              justifyContent: member?.id % 2 === 0 ? "flex-start" : "flex-end",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: { md: "row", ld: "column" },
               width: "80%",
             }}
           >
-            {member?.id % 2 !== 0 ? (
-              <>
-                <Grid
-                  sx={{
-                    display: "flex",
-                    height: "555px",
-                    alignItems: "flex-end",
-                    marginRight: {
-                      xs: 0,
-                      md: "-110px",
-                    },
-                    zIndex: 2,
-                  }}
-                >
-                  <div
-                    style={{
-                      backgroundColor: "white",
-                      color: "black",
-                      maxWidth: "300px",
-                      borderRadius: "5px",
-                      height: "fit-content",
-                    }}
-                  >
-                    {member.description}
-                  </div>
-                </Grid>
-                <img
-                  src={member?.image}
-                  alt={member?.name}
-                  draggable={false}
-                  style={{
-                    width: "400px",
-                    height: "600px",
-                    zIndex: 1,
-                    objectFit: "fill",
-                    marginLeft: {
-                      xs: 0,
-                      md: "-110px",
-                    },
-                  }}
-                />
-              </>
-            ) : (
-              <>
-                <img
-                  src={member?.image}
-                  alt={member?.name}
-                  draggable={false}
-                  style={{
-                    width: "400px",
-                    height: "600px",
-                    zIndex: 1,
-                    objectFit: "fill",
-                    marginRight: {
-                      xs: 0,
-                      md: "-110px",
-                    },
-                  }}
-                />
-                <Grid
-                  sx={{
-                    display: "flex",
-                    height: "555px",
-                    alignItems: "flex-end",
-                    marginLeft: {
-                      xs: 0,
-                      md: "-110px",
-                    },
-                    zIndex: 2,
-                  }}
-                >
-                  <div
-                    style={{
-                      backgroundColor: "white",
-                      color: "black",
-                      maxWidth: "300px",
-                      borderRadius: "5px",
-                      height: "fit-content",
-                      padding: "4px",
-                    }}
-                  >
-                    {member.description}
-                  </div>
-                </Grid>
-              </>
-            )}
+            <img
+              key={member?.id}
+              src={member?.image}
+              alt={""}
+              draggable={false}
+              style={{
+                height: "333px",
+                width: "333px",
+                zIndex: 4,
+              }}
+            />
+            <div style={{ width: "50%" }}>{member?.description}</div>
           </Grid>
         </Grid>
       ))}
