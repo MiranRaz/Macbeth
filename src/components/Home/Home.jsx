@@ -9,7 +9,6 @@ import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 import "./Home.css";
 import MacbethHomeContent from "./MacbethHomeContent.jsx";
-import GoTo from "../GoTo.jsx";
 
 const Home = () => {
   const [showImage, setShowImage] = useState(false); // Set initial state to false
@@ -96,10 +95,6 @@ const Home = () => {
       </Grid>
       {/* Intersection observer implementation */}
       <MacbethHomeContent />
-
-      <div style={{ paddingBottom: "13px" }}>
-        <GoTo from="home" to="about" deg="-90deg" />
-      </div>
     </div>
   );
 };

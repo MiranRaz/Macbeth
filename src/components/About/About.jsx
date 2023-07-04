@@ -3,7 +3,6 @@ import { createTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
 import "./About.css";
-import GoTo from "../GoTo.jsx";
 import bandMembers from "./bandMembers.js";
 import macbeth_skend from "../../assets/macbeth_skend.jpg";
 import LightTheme from "../../theme/LightTheme.js";
@@ -208,16 +207,7 @@ const About = () => {
           </Grid>
         </Grid>
       ))}
-
       <div style={{ height: "60vh" }}></div>
-      <Grid
-        style={{
-          bottom: 0,
-          height: "13vh",
-        }}
-      >
-        <GoTo from="home" to="gallery" deg="-180deg" />
-      </Grid>
     </div>
   );
 };

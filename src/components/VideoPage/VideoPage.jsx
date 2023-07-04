@@ -3,7 +3,6 @@ import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 import { Grid } from "@mui/material";
-import GoTo from "../GoTo.jsx";
 import { allVideosYT } from "./VideosData.js";
 
 const VideoPage = () => {
@@ -59,17 +58,6 @@ const VideoPage = () => {
             allowFullScreen
           />
         ))}
-      </Grid>
-
-      <Grid
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          paddingBottom: "13px",
-        }}
-      >
-        <GoTo from="stream" to="home" deg="-180deg" />
       </Grid>
     </div>
   );

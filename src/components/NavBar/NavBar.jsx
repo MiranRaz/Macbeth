@@ -1,17 +1,12 @@
-import { useState } from "react";
-// mui
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Menu,
-  MenuItem,
-  Grid,
-} from "@mui/material";
+import { AppBar, Toolbar, Grid, useMediaQuery } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import CollectionsIcon from "@mui/icons-material/Collections";
+import HeadsetIcon from "@mui/icons-material/Headset";
+import VideocamIcon from "@mui/icons-material/Videocam";
 // assets
 import macbeth_logo from "../../assets/macbeth_logo.png";
 import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
@@ -31,18 +26,141 @@ const pages = ["Home", "About", "Gallery", "Stream", "Video"];
 const NavBar = () => {
   let themeMode = useSelector((state) => state.theme.themeMode);
   const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
-
-  const [anchorElNav, setAnchorElNav] = useState(null);
   const location = useLocation();
   const { t } = useTranslation();
+  const isMobileView = useMediaQuery("(max-width: 900px)");
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  if (isMobileView) {
+    return (
+      <AppBar
+        position="fixed"
+        style={{
+          backgroundColor: theme.palette.primary.main,
+          transition: "all 0.3s ease-in-out",
+          borderBottom: `1px solid ${theme.palette.primary.text}`,
+          boxShadow: "none",
+        }}
+      >
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Grid
+              sx={{
+                flexGrow: 1,
+                pr: 3,
+                display: "flex",
+                justifyContent: { xs: "flex-start", md: "center" },
+              }}
+            >
+              <img
+                src={themeMode ? macbeth_logo : macbeth_logo_dark}
+                alt="macbeth logo"
+                style={{
+                  height: "65px",
+                  width: "85px",
+                  cursor: "pointer",
+                }}
+                draggable="false"
+                onClick={() => (window.location.href = "/")}
+              />
+            </Grid>
+            <Grid
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <ThemeMode />
+              <LanguagePicker />
+            </Grid>
+          </Toolbar>
+        </Container>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            bottom: 0,
+            position: "fixed",
+            width: "100%",
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.text,
+          }}
+        >
+          <BottomNavigation
+            sx={{
+              width: "100%",
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.primary.text,
+            }}
+          >
+            <CustomButton to={"/"}>
+              <BottomNavigationAction
+                label="Home"
+                icon={
+                  <HomeIcon
+                    sx={{
+                      color: theme.palette.primary.text,
+                    }}
+                  />
+                }
+              />
+            </CustomButton>
+            <CustomButton to={"/about"}>
+              <BottomNavigationAction
+                label="About"
+                value="about"
+                icon={
+                  <InfoIcon
+                    sx={{
+                      color: theme.palette.primary.text,
+                    }}
+                  />
+                }
+              />
+            </CustomButton>
+            <CustomButton to={"/gallery"}>
+              <BottomNavigationAction
+                label="Gallery"
+                value="gallery"
+                icon={
+                  <CollectionsIcon
+                    sx={{
+                      color: theme.palette.primary.text,
+                    }}
+                  />
+                }
+              />
+            </CustomButton>
+            <CustomButton to={"/stream"}>
+              <BottomNavigationAction
+                label="Stream"
+                value="stream"
+                icon={
+                  <HeadsetIcon
+                    sx={{
+                      color: theme.palette.primary.text,
+                    }}
+                  />
+                }
+              />
+            </CustomButton>
+            <CustomButton to={"/video"}>
+              <BottomNavigationAction
+                label="Video"
+                value="video"
+                icon={
+                  <VideocamIcon
+                    sx={{
+                      color: theme.palette.primary.text,
+                    }}
+                  />
+                }
+              />
+            </CustomButton>
+          </BottomNavigation>
+        </Toolbar>
+      </AppBar>
+    );
+  }
 
   return (
     <AppBar
@@ -91,7 +209,6 @@ const NavBar = () => {
                   location.pathname ===
                   (page === "Home" ? "/" : `/${page.toLowerCase()}`)
                 ).toString()}
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2 }}
                 theme={theme}
               >
@@ -99,64 +216,20 @@ const NavBar = () => {
               </CustomButton>
             ))}
           </Grid>
-          {/*light/dark theme and language picker */}
           <Grid
             sx={{
               flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               justifyContent: "center",
             }}
           >
             <ThemeMode />
             <LanguagePicker />
           </Grid>
-
-          {/*MOBILE VIEW*/}
-          <Grid
-            sx={{
-              display: { xs: "flex", md: "none" },
-              justifyContent: "flex-end",
-              flexGrow: 1,
-            }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Grid>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
 export default NavBar;

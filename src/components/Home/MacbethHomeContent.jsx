@@ -68,6 +68,7 @@ const MacbethHomeContent = () => {
       >
         {albumsData.map((card, index) => (
           <Grid
+            item
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
             className={`card ${
@@ -211,6 +212,7 @@ const MacbethHomeContent = () => {
           </Grid>
         ))}
         <Grid
+          item
           sx={{
             display: "flex",
             justifyContent: "center",

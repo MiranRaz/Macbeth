@@ -2,8 +2,6 @@ import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
-import { Grid } from "@mui/material";
-import GoTo from "../GoTo.jsx";
 import images from "./images.jsx";
 import ImageWithBlurhash from "./ImageWithBlurHash.jsx";
 import CardPlaceholder from "./CardPlaceholder.jsx";
@@ -32,17 +30,6 @@ const GalleryPage = () => {
           placeholder={<CardPlaceholder />}
         />
       ))}
-      <Grid
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          paddingBottom: "13px",
-          color: "white",
-        }}
-      >
-        <GoTo from="about" to="stream" deg="-180deg" />
-      </Grid>
     </div>
   );
 };

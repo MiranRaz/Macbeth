@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
-import GoTo from "../GoTo.jsx";
 import { Grid } from "@mui/material";
 import { useState } from "react"; // Import useState hook for handling state
 import albumData from "./AlbumData.js";
@@ -100,16 +99,6 @@ const MusicPage = () => {
         }}
         draggable="false"
       />
-      <Grid
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          paddingBottom: "13px",
-        }}
-      >
-        <GoTo from="gallery" to="video" deg="-180deg" />
-      </Grid>
     </div>
   );
 };
