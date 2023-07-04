@@ -14,21 +14,19 @@ const bandMembers = [
     id: 0,
     name: "hamza",
     image: hamzaImage,
-    description:
-      "Hamza Ražnatović. Rođen 1972. godine. Frontmen i osnivač benda. Tekstopisac, gitarist, aranžer, producent, mix master inžinjer.",
+    description: "Hamza Ražnatović.",
   },
   {
     id: 1,
     name: "zenan",
     image: zenanImage,
-    description:
-      "Zenan Šahinović. U bendu od njegovog osnivanja. Glavni gitarist, aranžer, producent, mix master inžinjer.",
+    description: "Zenan Šahinović. ",
   },
   {
     id: 2,
     name: "kenan",
     image: neznam,
-    description: "Kenan Šahinović. U bendu od njegovog osnivanja.",
+    description: "Kenan Šahinović.",
   },
   {
     id: 3,
@@ -46,7 +44,7 @@ const bandMembers = [
     id: 5,
     name: "lale",
     image: laleImage,
-    description: "Muamer Stočević Lale. Bas gitara i flauta.",
+    description: "Muamer Stočević Lale.",
   },
   {
     id: 6,
@@ -58,14 +56,13 @@ const bandMembers = [
     id: 7,
     name: "zule",
     image: zuleImage,
-    description:
-      "Mladen Vitomir Žule je poslijeratni gitarist u bendu Macbeth. Preminuo 2008. godine od poslijedica predoziranja.",
+    description: "Mladen Vitomir Žule.",
   },
   {
     id: 8,
     name: "nihad",
     image: nihadImage,
-    description: "Nihad Malićbegović. ",
+    description: "Nihad Malićbegović.",
   },
   {
     id: 9,
@@ -77,7 +74,7 @@ const bandMembers = [
     id: 10,
     name: "husein",
     image: huseinImage,
-    description: "Husein Mahmutović. ",
+    description: "Husein Mahmutović.",
   },
   {
     id: 11,
