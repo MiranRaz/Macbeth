@@ -40,7 +40,11 @@ const About = () => {
 
   return (
     <div ref={component}>
-      <div className="firstContainer">{t("about_desc")}</div>
+      <Grid
+        sx={{ display: "flex", justifyContent: "center", fontSize: "17px" }}
+      >
+        <div className="firstContainer">{t("about_desc")}</div>
+      </Grid>
       <Grid
         style={{
           display: "flex",

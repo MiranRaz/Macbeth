@@ -6,8 +6,6 @@ import { Grid } from "@mui/material";
 import { useState } from "react"; // Import useState hook for handling state
 import albumData from "./AlbumData.js";
 import AlbumModal from "./AlbumModal.jsx";
-import macbeth_logo from "../../assets/macbeth_logo.png";
-import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
 const MusicPage = () => {
   // theme
   let themeMode = useSelector((state) => state.theme.themeMode);
@@ -85,19 +83,6 @@ const MusicPage = () => {
         open={openAlbum}
         setOpen={setOpenAlbum}
         albumName={albumName}
-      />
-      <img
-        src={themeMode ? macbeth_logo : macbeth_logo_dark}
-        alt="macbeth logo"
-        style={{
-          position: "fixed",
-          height: "60%",
-          width: "60%",
-          opacity: "0.1",
-          bottom: -69,
-          zIndex: 0,
-        }}
-        draggable="false"
       />
     </div>
   );

@@ -1,24 +1,13 @@
 import { useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 // data
 import albumsData from "./albumsData.js";
 // mui
 import { Grid } from "@mui/material";
-import HeadphonesIcon from "@mui/icons-material/Headphones";
 // styling
-import {
-  GridWrapper,
-  GridCardBack,
-  TypographyCenter,
-  StreamButton,
-} from "./style.js";
+import { GridWrapper } from "./style.js";
 import "./HomeContent.css";
 
 const HomeContent = () => {
-  // translation
-  const { t } = useTranslation();
-
   const cardsRef = useRef([]);
 
   useEffect(() => {
@@ -63,7 +52,7 @@ const HomeContent = () => {
               display: "flex",
               flexDirection: "row",
               "@media (max-width: 900px)": {
-                flexDirection: "column",
+                flexDirection: "row",
               },
             }}
           >
@@ -74,52 +63,11 @@ const HomeContent = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               style={{
-                minWidth: "60%",
+                minWidth: "80%",
                 width: "auto",
                 backgroundColor: "black",
               }}
             />
-            <div className="card-wrapper">
-              <div className="album-card-animation reset-transform">
-                <div className="flip-card-container">
-                  <div className="flip-card">
-                    <div className="flip-card-front">
-                      <img
-                        src={card.imgSrc}
-                        alt="album cover"
-                        draggable={false}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="flip-card-back">
-                      <GridCardBack container>
-                        <Grid item sx={{ textDecoration: "underline" }}>
-                          {card.songName}
-                        </Grid>
-                        <Grid item>
-                          {t("lyrics")} & {t("music")}
-                          <TypographyCenter>Hamza Ražnatović</TypographyCenter>
-                          {t("arrangement")}
-                          <TypographyCenter>
-                            Hamza Ražnatović <br /> Zenan Šahinović
-                          </TypographyCenter>
-                          ALBUM
-                          <TypographyCenter>{card.albumName}</TypographyCenter>
-                        </Grid>
-                        <Link to={`/stream`}>
-                          <StreamButton
-                            variant="outlined"
-                            endIcon={<HeadphonesIcon />}
-                          >
-                            Stream
-                          </StreamButton>
-                        </Link>
-                      </GridCardBack>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </Grid>
         ))}
         <Grid

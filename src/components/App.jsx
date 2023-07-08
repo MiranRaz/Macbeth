@@ -15,6 +15,8 @@ import { createTheme } from "@mui/material/styles";
 // style
 import lightTheme from "../theme/LightTheme.js";
 import darkTheme from "../theme/DarkTheme.js";
+import macbeth_logo from "../assets/macbeth_logo.png";
+import macbeth_logo_dark from "../assets/macbeth_logo_dark.png";
 
 const App = () => {
   const themeMode = useSelector((state) => state.theme.themeMode);
@@ -39,21 +41,19 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
-      {/*<img*/}
-      {/*  src={macbethold}*/}
-      {/*  alt="macbeth old"*/}
-      {/*  style={{*/}
-      {/*    position: "fixed",*/}
-      {/*    height: "100%",*/}
-      {/*    width: "100%",*/}
-      {/*    opacity: "0.1",*/}
-      {/*    top: 64,*/}
-      {/*    right: 0,*/}
-      {/*    zIndex: 0,*/}
-      {/*    pointerEvents: "none",*/}
-      {/*  }}*/}
-      {/*  draggable="false"*/}
-      {/*/>*/}
+      <img
+        src={themeMode ? macbeth_logo : macbeth_logo_dark}
+        alt="macbeth logo"
+        style={{
+          position: "fixed",
+          height: "60%",
+          width: "60%",
+          opacity: "0.1",
+          bottom: -69,
+          zIndex: 0,
+        }}
+        draggable="false"
+      />
     </Router>
   );
 };
