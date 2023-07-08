@@ -1,0 +1,27 @@
+.macbeth_home {
+  width: 80%;
+  margin-top: -20%;
+  margin-bottom: -10%;
+  transition: opacity 0.3s ease-in-out; /* Add transition property*/
+  z-index: 1;
+}
+/*logo text*/
+.transition-image {
+  position: relative;
+  overflow: hidden;
+  opacity: 0; /* Set initial opacity to 0 */
+}
+.transition-image.show {
+  opacity: 1;
+  animation: revealImage 0.5s ease-in-out forwards; /* Adjust the duration and easing function as desired */
+}
+@keyframes revealImage {
+  0% {
+    clip-path: polygon(0% 12%, 22% 100%, 0% 100%, 0% 0%);
+    opacity: 0;
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
+}

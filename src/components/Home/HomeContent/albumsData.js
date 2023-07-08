@@ -1,7 +1,7 @@
-import crneoci from "../../assets/crneoci.jpg";
-import kajlo from "../../assets/kajlo.jpg";
-import istinom from "../../assets/istinom.jpg";
-import samojedanje from "../../assets/samojedanje.jpg";
+import crneoci from "../../../assets/crneoci.jpg";
+import kajlo from "../../../assets/kajlo.jpg";
+import istinom from "../../../assets/istinom.jpg";
+import samojedanje from "../../../assets/samojedanje.jpg";
 
 const albumsData = [
   {

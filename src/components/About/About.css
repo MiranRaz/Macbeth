@@ -1,20 +1,24 @@
+.firstContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 48px 48px 124px 48px;
+  text-align: justify;
+  opacity: 1;
+}
+
 .container {
   width: 3000vw;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-}
-
-.firstContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: auto;
-  padding: 48px 24px 124px 24px;
+  opacity: 1;
 }
 
 .panel {
   width: 100vw;
+  opacity: 1;
   height: 100vh;
   display: flex;
   flex-direction: column;

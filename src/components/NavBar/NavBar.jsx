@@ -1,5 +1,9 @@
-import { AppBar, Toolbar, Grid, useMediaQuery } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+// mui
+import { createTheme } from "@mui/material/styles";
+import { AppBar, Toolbar, Grid, useMediaQuery } from "@mui/material";
 import Container from "@mui/material/Container";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
@@ -14,10 +18,7 @@ import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
 import LanguagePicker from "./LanguagePicker.jsx";
 // styles
 import { CustomButton } from "./style";
-import { useTranslation } from "react-i18next";
 import ThemeMode from "./ThemeMode.jsx";
-import { useSelector } from "react-redux";
-import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 

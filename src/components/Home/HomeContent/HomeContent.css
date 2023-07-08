@@ -1,31 +1,12 @@
-.transition-image {
-  position: relative;
-  overflow: hidden;
-  opacity: 0; /* Set initial opacity to 0 */
-}
-
-.transition-image.show {
-  opacity: 1;
-  animation: revealImage 0.5s ease-in-out forwards; /* Adjust the duration and easing function as desired */
-}
-
-@keyframes revealImage {
-  0% {
-    clip-path: polygon(0% 12%, 22% 100%, 0% 100%, 0% 0%);
-    opacity: 0;
-  }
-  100% {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    opacity: 1;
-  }
-}
-
 /*scroll animation */
 .card-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 5rem;
-  align-items: flex-start;
+  padding: 100px 0 100px 0;
+  z-index: 2;
 }
 .card {
   transform: translate(100px);
@@ -40,12 +21,21 @@
 .logo {
   opacity: 0;
   transition: 0.3s;
+  width: 23%;
+  z-index: 2;
 }
 .logo.showing {
   opacity: 1;
 }
 
 /*ALBUM CARD INITIAL ANIMATION & FLIP CARD ON HOVER */
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .album-card-animation {
   padding: 12px;
   transform: translate(-400px);
@@ -62,7 +52,6 @@
 }
 
 /*flip album card */
-
 .flip-card-container {
   width: 333px;
   height: 333px;
@@ -143,7 +132,10 @@
 .yt-iframe {
   width: 70%;
   height: 504px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  z-index: 1;
+  border: 0;
+  border-radius: 3px;
 }
 
 /* CSS for phone and tablet screens */
@@ -159,8 +151,10 @@
     opacity: 1;
   }
   .yt-iframe {
-    width: 100%;
+    width: 100vw;
     height: 300px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    border: 0;
+    border-radius: 3px;
   }
 }

@@ -13,8 +13,6 @@ html {
 }
 
 body {
-  /*overflow-y: visible;*/
-  position: relative;
   margin: 0;
   font-family: "Roundkey", monospace;
   font-weight: 700;

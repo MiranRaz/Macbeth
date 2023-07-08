@@ -2,10 +2,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import "./About.css";
-import { useSelector } from "react-redux";
-import LightTheme from "../../theme/LightTheme.js";
-import { createTheme } from "@mui/material/styles";
-import DarkTheme from "../../theme/DarkTheme.js";
 import { useTranslation } from "react-i18next";
 import macbeth_skend from "../../assets/macbeth_skend.jpg";
 import bandMembers from "./bandMembers.js";
@@ -16,9 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 const About = () => {
   const component = useRef();
   const slider = useRef();
-  // theme
-  const themeMode = useSelector((state) => state.theme.themeMode);
-  const theme = themeMode ? createTheme(LightTheme) : createTheme(DarkTheme);
   // translation
   const { t } = useTranslation();
 
@@ -46,31 +39,8 @@ const About = () => {
   });
 
   return (
-    <div
-      ref={component}
-      style={{ backgroundColor: theme.palette.primary.main }}
-    >
-      <div className="firstContainer">
-        <Grid
-          container
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              color: theme.palette.primary.text,
-            }}
-          >
-            {t("about_desc")}
-          </Grid>
-        </Grid>
-      </div>
+    <div ref={component}>
+      <div className="firstContainer">{t("about_desc")}</div>
       <Grid
         style={{
           display: "flex",
