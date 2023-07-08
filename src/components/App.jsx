@@ -9,7 +9,7 @@ import GalleryPage from "./GalleryPage/GalleryPage.jsx";
 import MusicPage from "./MusicPage/MusicPage.jsx";
 import VideoPage from "./VideoPage/VideoPage.jsx";
 // assets
-import macbethold from "../assets/macbethold.png";
+// import macbethold from "../assets/macbethold.png";
 // mui
 import { createTheme } from "@mui/material/styles";
 // style
@@ -39,21 +39,21 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
-      <img
-        src={macbethold}
-        alt="macbeth old"
-        style={{
-          position: "fixed",
-          height: "100%",
-          width: "100%",
-          opacity: "0.1",
-          top: 64,
-          right: 0,
-          zIndex: 0,
-          pointerEvents: "none",
-        }}
-        draggable="false"
-      />
+      {/*<img*/}
+      {/*  src={macbethold}*/}
+      {/*  alt="macbeth old"*/}
+      {/*  style={{*/}
+      {/*    position: "fixed",*/}
+      {/*    height: "100%",*/}
+      {/*    width: "100%",*/}
+      {/*    opacity: "0.1",*/}
+      {/*    top: 64,*/}
+      {/*    right: 0,*/}
+      {/*    zIndex: 0,*/}
+      {/*    pointerEvents: "none",*/}
+      {/*  }}*/}
+      {/*  draggable="false"*/}
+      {/*/>*/}
     </Router>
   );
 };

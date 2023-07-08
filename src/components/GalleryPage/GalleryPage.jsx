@@ -58,7 +58,7 @@ const GalleryPage = () => {
           style={{
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.text,
-            height: "100vh",
+            height: "92vh",
             width: "100%",
             display: "flex",
             justifyContent: "center",
