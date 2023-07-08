@@ -61,6 +61,7 @@ const About = () => {
             width: "80%",
             marginTop: "-20%",
             marginBottom: "-10%",
+            objectFit: "contain",
             zIndex: 12,
           }}
         />
