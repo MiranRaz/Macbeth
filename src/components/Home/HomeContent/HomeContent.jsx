@@ -73,6 +73,7 @@ const HomeContent = () => {
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              style={{ minWidth: "60%", width: "auto" }}
             />
             <div className="card-wrapper">
               <div className="album-card-animation reset-transform">
