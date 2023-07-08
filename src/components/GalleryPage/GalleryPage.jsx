@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
 import galerija_slike from "../../assets/gallery/galerija_slike.png";
-import mouse_click_move from "../../assets/mouse_click_move.jpg";
+import mouse_click_move from "../../assets/mouse_click_move.png";
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -56,6 +56,8 @@ const GalleryPage = () => {
       <>
         <div
           style={{
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.text,
             height: "100vh",
             width: "100%",
             display: "flex",
@@ -69,6 +71,7 @@ const GalleryPage = () => {
           <img
             src={mouse_click_move}
             alt={""}
+            draggable={false}
             style={{ width: "30%", height: "20%" }}
           />
         </div>
@@ -104,14 +107,6 @@ const GalleryPage = () => {
         }}
       >
         <img src={galerija_slike} alt={""} style={{ cursor: "pointer" }} />
-        {/*{images.map((image) => (*/}
-        {/*  <ImageWithBlurhash*/}
-        {/*    key={image.id}*/}
-        {/*    src={image.path}*/}
-        {/*    hash={image.hash}*/}
-        {/*    placeholder={<CardPlaceholder />}*/}
-        {/*  />}*/}
-        {/*))}*/}
       </div>
     </div>
   );

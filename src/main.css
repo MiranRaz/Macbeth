@@ -5,14 +5,19 @@
 }
 
 html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
 body {
+  /*overflow-y: visible;*/
+  position: relative;
   margin: 0;
   font-family: "Roundkey", monospace;
   font-weight: 700;
-  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;

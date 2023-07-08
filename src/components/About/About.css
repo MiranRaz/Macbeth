@@ -1,0 +1,23 @@
+.container {
+  width: 3000vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.firstContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  padding: 48px 24px 124px 24px;
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-import mouse_click_move from "../../assets/mouse_click_move.jpg";
+import mouse_click_move from "../../assets/mouse_click_move.png";
 import { useTranslation } from "react-i18next";
 
 const ImageInfo = () => {
