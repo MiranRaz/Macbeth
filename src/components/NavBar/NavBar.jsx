@@ -1,26 +1,28 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 // mui
 import { createTheme } from "@mui/material/styles";
-import { AppBar, Toolbar, Grid, useMediaQuery } from "@mui/material";
+import { AppBar, Toolbar, Grid, useMediaQuery, Button } from "@mui/material";
+import DehazeIcon from "@mui/icons-material/Dehaze";
 import Container from "@mui/material/Container";
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import CollectionsIcon from "@mui/icons-material/Collections";
-import HeadsetIcon from "@mui/icons-material/Headset";
-import VideocamIcon from "@mui/icons-material/Videocam";
 // assets
 import macbeth_logo from "../../assets/macbeth_logo.png";
 import macbeth_logo_dark from "../../assets/macbeth_logo_dark.png";
 // components
 import LanguagePicker from "./LanguagePicker.jsx";
 // styles
-import { CustomButton } from "./style";
+import { DrawerHeader, Main, CustomButton } from "./style";
 import ThemeMode from "./ThemeMode.jsx";
 import LightTheme from "../../theme/LightTheme.js";
 import DarkTheme from "../../theme/DarkTheme.js";
+//
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const pages = ["Home", "About", "Gallery", "Stream", "Video"];
 
@@ -30,9 +32,10 @@ const NavBar = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const isMobileView = useMediaQuery("(max-width: 900px)");
+  const [openDrawer, setOpenDrawer] = useState(false);
 
-  if (isMobileView) {
-    return (
+  return (
+    <>
       <AppBar
         position="fixed"
         style={{
@@ -66,6 +69,29 @@ const NavBar = () => {
             </Grid>
             <Grid
               sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                justifyContent: "space-around",
+              }}
+            >
+              {pages.map((page) => (
+                <CustomButton
+                  key={page}
+                  to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+                  isactive={(
+                    location.pathname ===
+                    (page === "Home" ? "/" : `/${page.toLowerCase()}`)
+                  ).toString()}
+                  sx={{ my: 2 }}
+                  theme={theme}
+                >
+                  {t(`${page.toLowerCase()}`)}
+                </CustomButton>
+              ))}
+            </Grid>
+            <Grid
+              sx={{
+                flexGrow: 1,
                 display: "flex",
                 justifyContent: "center",
               }}
@@ -73,163 +99,81 @@ const NavBar = () => {
               <ThemeMode />
               <LanguagePicker />
             </Grid>
+            <Button sx={{ color: theme.palette.primary.text }}>
+              {isMobileView ? (
+                <DehazeIcon
+                  onClick={() => {
+                    setOpenDrawer(true);
+                  }}
+                />
+              ) : (
+                ""
+              )}
+            </Button>
           </Toolbar>
         </Container>
-        <Toolbar
+      </AppBar>
+      <Main openDrawer={openDrawer}>
+        <DrawerHeader />
+      </Main>
+      <Drawer
+        sx={{
+          width: 240,
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: 240,
+          },
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.primary.text,
+        }}
+        variant="persistent"
+        anchor="right"
+        open={openDrawer}
+      >
+        <DrawerHeader
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            bottom: 0,
-            position: "fixed",
-            width: "100%",
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.text,
+            width: "100vw",
+          }}
+        >
+          <IconButton
+            onClick={() => {
+              setOpenDrawer(false);
+            }}
+          >
+            <ChevronRightIcon sx={{ color: theme.palette.primary.text }} />
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
+        <List
+          sx={{
+            height: "100vh",
+            width: "100vw",
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.text,
           }}
         >
-          <BottomNavigation
-            sx={{
-              width: "100%",
-              backgroundColor: theme.palette.primary.main,
-              color: theme.palette.primary.text,
-            }}
-          >
-            <CustomButton to={"/"}>
-              <BottomNavigationAction
-                label="Home"
-                icon={
-                  <HomeIcon
-                    sx={{
-                      color: theme.palette.primary.text,
-                    }}
-                  />
-                }
-              />
-            </CustomButton>
-            <CustomButton to={"/about"}>
-              <BottomNavigationAction
-                label="About"
-                value="about"
-                icon={
-                  <InfoIcon
-                    sx={{
-                      color: theme.palette.primary.text,
-                    }}
-                  />
-                }
-              />
-            </CustomButton>
-            <CustomButton to={"/gallery"}>
-              <BottomNavigationAction
-                label="Gallery"
-                value="gallery"
-                icon={
-                  <CollectionsIcon
-                    sx={{
-                      color: theme.palette.primary.text,
-                    }}
-                  />
-                }
-              />
-            </CustomButton>
-            <CustomButton to={"/stream"}>
-              <BottomNavigationAction
-                label="Stream"
-                value="stream"
-                icon={
-                  <HeadsetIcon
-                    sx={{
-                      color: theme.palette.primary.text,
-                    }}
-                  />
-                }
-              />
-            </CustomButton>
-            <CustomButton to={"/video"}>
-              <BottomNavigationAction
-                label="Video"
-                value="video"
-                icon={
-                  <VideocamIcon
-                    sx={{
-                      color: theme.palette.primary.text,
-                    }}
-                  />
-                }
-              />
-            </CustomButton>
-          </BottomNavigation>
-        </Toolbar>
-      </AppBar>
-    );
-  }
-
-  return (
-    <AppBar
-      position="fixed"
-      style={{
-        backgroundColor: theme.palette.primary.main,
-        transition: "all 0.3s ease-in-out",
-        borderBottom: `1px solid ${theme.palette.primary.text}`,
-        boxShadow: "none",
-      }}
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Grid
-            sx={{
-              flexGrow: 1,
-              pr: 3,
-              display: "flex",
-              justifyContent: { xs: "flex-start", md: "center" },
-            }}
-          >
-            <img
-              src={themeMode ? macbeth_logo : macbeth_logo_dark}
-              alt="macbeth logo"
-              style={{
-                height: "65px",
-                width: "85px",
-                cursor: "pointer",
+          {pages.map((page) => (
+            <CustomButton
+              onClick={() => {
+                setOpenDrawer(false);
               }}
-              draggable="false"
-              onClick={() => (window.location.href = "/")}
-            />
-          </Grid>
-          <Grid
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              justifyContent: "space-around",
-            }}
-          >
-            {pages.map((page) => (
-              <CustomButton
-                key={page}
-                to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
-                isactive={(
-                  location.pathname ===
-                  (page === "Home" ? "/" : `/${page.toLowerCase()}`)
-                ).toString()}
-                sx={{ my: 2 }}
-                theme={theme}
-              >
-                {t(`${page.toLowerCase()}`)}
-              </CustomButton>
-            ))}
-          </Grid>
-          <Grid
-            sx={{
-              flexGrow: 1,
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <ThemeMode />
-            <LanguagePicker />
-          </Grid>
-        </Toolbar>
-      </Container>
-    </AppBar>
+              key={page}
+              to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+              isactive={(
+                location.pathname ===
+                (page === "Home" ? "/" : `/${page.toLowerCase()}`)
+              ).toString()}
+              sx={{ my: 2 }}
+              theme={theme}
+            >
+              {t(`${page.toLowerCase()}`)}
+            </CustomButton>
+          ))}
+        </List>
+      </Drawer>
+    </>
   );
 };
 

@@ -1,7 +1,34 @@
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 
-export const CustomButton = styled(Link)(({ isactive, theme }) => ({
+const DrawerHeader = styled("div")(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.text,
+  display: "flex",
+  alignItems: "center",
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  justifyContent: "flex-start",
+}));
+
+const Main = styled("main", {
+  shouldForwardProp: (prop) => prop !== "openDrawer",
+})(({ theme, openDrawer }) => ({
+  flexGrow: 1,
+  transition: theme.transitions.create("margin", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  marginRight: -240,
+  ...(openDrawer && {
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginRight: 0,
+  }),
+}));
+const CustomButton = styled(Link)(({ isactive, theme }) => ({
   color: `${theme.palette.primary.text}`,
   display: "block",
   position: "relative",
@@ -32,3 +59,5 @@ export const CustomButton = styled(Link)(({ isactive, theme }) => ({
     transform: "scaleX(1)",
   },
 }));
+
+export { DrawerHeader, Main, CustomButton };
