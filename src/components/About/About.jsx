@@ -74,8 +74,9 @@ const About = () => {
               alt={""}
               draggable={false}
               style={{
-                height: "433px",
+                height: "500px",
                 width: "349px",
+                objectFit: "cover",
               }}
             />
           </div>

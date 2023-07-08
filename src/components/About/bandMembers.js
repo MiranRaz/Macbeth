@@ -8,6 +8,8 @@ import ogiImage from "../../assets/bandGallery/ogi.jpg";
 import huseinImage from "../../assets/bandGallery/husein.jpg";
 import nihadImage from "../../assets/bandGallery/nihad.jpg";
 import nailImage from "../../assets/bandGallery/nail.jpg";
+import dinoImage from "../../assets/bandGallery/dino.jpg";
+import farukImage from "../../assets/bandGallery/faruk.jpg";
 
 const bandMembers = [
   {
@@ -32,7 +34,7 @@ const bandMembers = [
     id: 3,
     name: "Nermin Demirović",
     image: nerminImage,
-    description: "Nermin Demirović.",
+    description: "Nermin Demirović Budo.",
   },
   {
     id: 4,
@@ -50,7 +52,7 @@ const bandMembers = [
     id: 6,
     name: "samir",
     image: neznam,
-    description: "Samir Bajraktarević.",
+    description: "Samir Bajraktarević Bajchi.",
   },
   {
     id: 7,
@@ -81,6 +83,24 @@ const bandMembers = [
     name: "nail",
     image: nailImage,
     description: "Nail Jusić.",
+  },
+  {
+    id: 12,
+    name: "dino",
+    image: dinoImage,
+    description: "Dino Rešidbegović.",
+  },
+  {
+    id: 13,
+    name: "faruk",
+    image: farukImage,
+    description: "Faruk Kadić.",
+  },
+  {
+    id: 14,
+    name: "zlaja",
+    image: neznam,
+    description: "Zlatan Bilalovic Zlaja.",
   },
 ];
 
