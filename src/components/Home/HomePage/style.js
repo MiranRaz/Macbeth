@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Grid } from "@mui/material";
 
 const GridWrapper = styled(Grid)(() => ({
-  height: `calc(100vh - 65px)`,
+  height: window.innerHeight,
   width: "100vw",
   transition: "all 0.3s ease-in-out",
   overflowY: "scroll",
