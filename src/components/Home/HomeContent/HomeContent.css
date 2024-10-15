@@ -19,7 +19,7 @@
   opacity: 1;
 }
 .logo {
-  opacity: 0;
+  opacity: 1;
   transition: 0.3s;
   width: 23%;
   z-index: 2;
