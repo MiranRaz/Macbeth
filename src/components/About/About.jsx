@@ -22,7 +22,12 @@ const About = () => {
   // Remove the useEffect for the slider
 
   return (
-    <div ref={component}>
+    <div
+      ref={component}
+      style={{
+        height: '100vh',
+      }}
+    >
       <Grid
         sx={{ display: 'flex', justifyContent: 'center', fontSize: '17px' }}
       >
